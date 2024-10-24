@@ -1,0 +1,46 @@
+@media only screen and (max-width: 1200px) {
+  .hero_title {
+    font-size: 110px;
+  }
+
+  .animation .bridge_video {
+    max-width: 815px;
+    bottom: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .animation .bridge_video video {
+    position: static;
+  }
+
+  .why_name {
+    font-size: 36px;
+  }
+
+  .licenses_vectors img.vector_1 {
+    bottom: -50px;
+    width: 80px;
+  }
+
+  .licenses_vectors img.vector_2 {
+    width: 80px;
+  }
+
+  .licenses_vectors img.vector_3 {
+    width: 50px;
+  }
+
+  .licenses_block {
+    padding: 0;
+    flex-direction: column;
+    gap: 65px 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .service {
+    background-position: center 70%;
+  }
+}

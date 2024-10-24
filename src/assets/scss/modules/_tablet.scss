@@ -1,0 +1,44 @@
+@media only screen and (max-width: 1024px) {
+  .hero .container .background_video {
+    right: -5%;
+    top: -20%;
+  }
+
+  .hero_title {
+    line-height: 90px;
+    font-size: 90px;
+  }
+  .hero_title span {
+    padding: 0;
+  }
+  .animation .container {
+    padding: 140px 40px 0 40px;
+  }
+  .animation .bridge_video {
+    max-width: 900px;
+    bottom: 510px;
+  }
+  .container {
+    max-width: 768px;
+  }
+
+  .why_we .row {
+    gap: 25px;
+  }
+
+  .why_box {
+    padding: 25px;
+  }
+  .why_name {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .animation_vector1 {
+    z-index: -1;
+  }
+
+  .service::before {
+    max-width: 768px;
+    top: 50px;
+  }
+}

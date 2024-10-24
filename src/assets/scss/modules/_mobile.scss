@@ -1,0 +1,14 @@
+@media only screen and (max-width: 481px) {
+  .animation .bridge_video {
+    bottom: 90%;
+  }
+
+  .animation .bridge_video video {
+    height: 100%;
+  }
+
+  .animation .line {
+    width: 481px;
+    top: -64px;
+  }
+}

@@ -1,0 +1,32 @@
+@media only screen and (max-width: 1400px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  /* .hero_title{
+        font-size: 78px;
+        line-height: 80px;
+    } */
+  .hero_title span {
+    padding-left: 140px;
+  }
+  .animation {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  /* .animation .line{
+        top: -45px;
+    } */
+
+  .licenses_vectors img.vector_2 {
+    bottom: 81px;
+  }
+
+  .licenses_vectors img.vector_3 {
+    bottom: 115px;
+  }
+}

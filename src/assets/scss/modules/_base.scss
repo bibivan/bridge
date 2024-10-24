@@ -1,0 +1,36 @@
+@use '../core/variables' as *;
+@use '../core/mediaqueries' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-base;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-base;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+input[type='checkbox'] {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.rotating-box {
+  transition: transform 0.1s ease-out;
+  perspective: 1000px;
+  box-shadow: 0 0 10px 2px gray;
+
+  @include hover {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

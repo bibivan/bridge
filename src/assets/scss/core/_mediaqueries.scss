@@ -1,0 +1,96 @@
+$xl-desktop: 1920px;
+$lg-desktop: 1600px;
+$md-desktop: 1440px;
+$sm-desktop: 1320px;
+$xs-desktop: 1200px;
+$desktop: 1025px;
+$tablet: 768px;
+$xxl-mobile: 481px;
+$xl-mobile: 412px;
+$lg-mobile: 393px;
+$md-mobile: 375px;
+$sm-mobile: 360px;
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin xl-desktop {
+  @media (min-width: $xl-desktop) {
+    @content;
+  }
+}
+
+@mixin lg-desktop {
+  @media (min-width: $lg-desktop) {
+    @content;
+  }
+}
+
+@mixin md-desktop {
+  @media (min-width: $md-desktop) {
+    @content;
+  }
+}
+
+@mixin sm-desktop {
+  @media (min-width: $sm-desktop) {
+    @content;
+  }
+}
+
+@mixin xs-desktop {
+  @media (min-width: $xs-desktop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin xxl-mobile {
+  @media (min-width: $xxl-mobile) {
+    @content;
+  }
+}
+
+@mixin xl-mobile {
+  @media (min-width: $xl-mobile) {
+    @content;
+  }
+}
+
+@mixin lg-mobile {
+  @media (min-width: $lg-mobile) {
+    @content;
+  }
+}
+
+@mixin md-mobile {
+  @media (min-width: $md-mobile) {
+    @content;
+  }
+}
+
+@mixin sm-mobile {
+  @media (min-width: $sm-mobile) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin hover-none {
+  @media (hover: none) {
+    @content;
+  }
+}
