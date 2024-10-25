@@ -1,62 +1,31 @@
 export default () => {
   // Проверка, поддерживается ли hover на устройстве
   window.document.addEventListener('DOMContentLoaded', () => {
-    // Проверка, поддерживается ли hover на устройстве
-    const canHover = window.matchMedia('(hover: hover)').matches
+    const cards = document.querySelectorAll('.rotating-box')
 
-    if (canHover) {
-      const addHoverEffect = (box) => {
-        let currentX = 0
-        let currentY = 0
-        let targetX = 0
-        let targetY = 0
-        let animationFrameId = null
-        let isHovering = false
+    cards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect()
 
-        const lerp = (start, end, t) => start + (end - start) * t
+        // Позиция курсора относительно центра карточки
+        const x = e.clientX - rect.left - rect.width / 2
+        const y = e.clientY - rect.top - rect.height / 2
 
-        const animate = () => {
-          if (!isHovering) return
+        // Коэффициент для настройки интенсивности эффекта
+        const intensity = 15
 
-          // Плавное приближение к целевым значениям
-          currentX = lerp(currentX, targetX, 0.1)
-          currentY = lerp(currentY, targetY, 0.1)
+        // Вычисляем углы поворота
+        const rotateX = (-y / (rect.height / 2)) * intensity
+        const rotateY = (x / (rect.width / 2)) * intensity
 
-          // Применяем ротацию и масштабирование
-          box.style.transform = `rotateX(${currentY}deg) rotateY(${currentX}deg) scale(1.1)`
+        // Применяем трансформации
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`
+      })
 
-          animationFrameId = requestAnimationFrame(animate)
-        }
-
-        box.addEventListener('mousemove', (event) => {
-          const { width, height, left, top } = box.getBoundingClientRect()
-
-          // Координаты курсора относительно блока
-          const x = event.clientX - left - width / 2
-          const y = event.clientY - top - height / 2
-
-          // Настройка вращения: поворот в сторону курсора
-          // Поворачиваем по оси Y: уменьшаем ротацию по Y в сторону курсора
-          targetX = -(x / width) * 30
-          // Поворачиваем по оси X: уменьшаем ротацию по X в сторону курсора
-          targetY = (y / height) * 30
-
-          if (!isHovering) {
-            isHovering = true
-            animate()
-          }
-        })
-
-        box.addEventListener('mouseleave', () => {
-          isHovering = false
-          cancelAnimationFrame(animationFrameId)
-          box.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`
-        })
-      }
-
-      // Применяем эффект ко всем элементам rotating-box только если устройство поддерживает hover
-      const boxes = document.querySelectorAll('.rotating-box')
-      boxes.forEach((box) => addHoverEffect(box))
-    }
+      card.addEventListener('mouseleave', () => {
+        // Сбрасываем трансформации при уходе курсора
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)'
+      })
+    })
   })
 }
