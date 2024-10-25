@@ -1,0 +1,12 @@
+dist
+docker
+public
+
+node_modules
+
+logs
+*.log
+
+.DS_Store
+.fleet
+.idea
