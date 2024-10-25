@@ -22,7 +22,9 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "jquery": "^3.7.1",
+    "normalize.css": "^8.0.1",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@eslint/js": "^8.57.1",

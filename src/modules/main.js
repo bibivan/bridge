@@ -8,16 +8,15 @@ export default () => {
   document.addEventListener('DOMContentLoaded', function () {
     // Check if the browser is Safari
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
-    let sequenceImage
 
-    if (isSafari) {
+    if (!isSafari) {
       // / Create and display the GIF
       // const gif = document.createElement('img');
       // gif.src = './videos/sequence.gif'; // Replace with your GIF path
       // document.querySelector('.background_video').appendChild(gif);
       const generateMainSequence = () => {
         for (let i = 1; i <= 361; i++) {
-          sequenceImage = document.createElement('img')
+          const sequenceImage = document.createElement('img')
 
           if (i < 10) {
             sequenceImage.src = `./animation/sequence/animation0000${i}.webp`
