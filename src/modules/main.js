@@ -9,7 +9,7 @@ export default () => {
     // Check if the browser is Safari
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
 
-    if (!isSafari) {
+    if (isSafari) {
       // / Create and display the GIF
       // const gif = document.createElement('img');
       // gif.src = './videos/sequence.gif'; // Replace with your GIF path
