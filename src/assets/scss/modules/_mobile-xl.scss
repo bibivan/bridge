@@ -152,9 +152,8 @@
   .animation_vector2,
   .animation_vector3,
   .services_vectors,
-  .licenses_vectors,
-  .contacts_img,
   .service::before,
+  .contacts_img,
   .contacts .logo {
     display: none;
   }
@@ -250,9 +249,14 @@
     padding-top: 45px;
   }
 
-  .licenses_vectors::before,
-  .licenses_vectors::after {
+  .licenses_vectors {
     display: none;
+
+    &::before,
+    &::after {
+      display: none;
+      content: none;
+    }
   }
 
   .licenses .container {
