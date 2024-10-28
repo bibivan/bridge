@@ -264,7 +264,13 @@
   }
 
   .form {
-    padding-top: 45px;
+    position: relative;
+    z-index: 99;
+    padding-top: 65px;
+  }
+
+  .form_vectors {
+    display: none;
   }
 
   .contacts {
