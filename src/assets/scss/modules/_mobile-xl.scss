@@ -266,7 +266,11 @@
   .form {
     position: relative;
     z-index: 99;
-    padding-top: 65px;
+    padding-top: 45px;
+  }
+
+  .form form input[type='text'] {
+    margin-top: 14px;
   }
 
   .form_vectors {
