@@ -248,6 +248,15 @@
   .licenses {
     padding-top: 45px;
     overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: -70px;
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   .licenses_vectors {
@@ -267,7 +276,16 @@
   .form {
     position: relative;
     z-index: 99;
-    padding-top: 45px;
+    padding-top: 31px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: -70px;
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   .form form input[type='text'] {

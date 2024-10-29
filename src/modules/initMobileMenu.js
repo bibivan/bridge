@@ -18,6 +18,24 @@ export default () => {
   closeMenuBtn.addEventListener('click', closeMenu)
   overlay.addEventListener('click', closeMenu)
   links.forEach((link) => {
-    link.addEventListener('click', closeMenu)
+    link.addEventListener('click', (e) => {
+      e.preventDefault()
+      closeMenu()
+
+      const targetId = link.getAttribute('href').substring(1)
+      const targetElement = document.getElementById(targetId)
+      const targetElementRect = targetElement.getBoundingClientRect()
+      const targetElementYPosition = targetElementRect.top + window.scrollY
+      const headerHeight = document.querySelector('header').offsetHeight
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElementYPosition - headerHeight - 10,
+          behavior: 'smooth'
+        })
+
+        // history.pushState(null, null, `#${targetId}`)
+      }
+    })
   })
 }
