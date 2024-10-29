@@ -23,6 +23,10 @@
   line-height: 45px;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 /* Header */
 header {
   position: fixed;
@@ -75,6 +79,106 @@ header .header_menu ul {
   font-style: normal;
   line-height: 100%;
   text-decoration: none;
+}
+
+.burger {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile menu */
+
+.mobile-menu {
+  z-index: 101;
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  &_open {
+    display: flex;
+  }
+
+  &__overlay {
+    z-index: 1;
+    position: fixed;
+    inset: 0;
+    background: rgba(#fff, 0.1);
+    backdrop-filter: blur(4.5px);
+  }
+
+  &__dialog {
+    z-index: 2;
+    position: relative;
+    padding: 35px 43px;
+    width: 295px;
+    min-height: 295px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: #fff;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 8px -1px #000;
+    transition: border-color 0.2s ease-in-out;
+
+    &:active {
+      border: 1px solid #078496;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 25px;
+    right: 27px;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    color: #000;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 22.5px;
+    text-align: left;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s ease-in-out;
+
+    &:active {
+      background: #bfe8ea;
+      backdrop-filter: blur(4px);
+    }
+  }
 }
 
 /* Hero */
